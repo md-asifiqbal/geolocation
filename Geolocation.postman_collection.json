@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "57dcc505-98e9-4d41-808f-a1266be1472c",
+		"name": "Geolocation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22952224",
+		"_collection_link": "https://linkstaff-bd.postman.co/workspace/Swimming-School~7f963091-bbb0-46ca-8f85-b17a0e6a4643/collection/22952224-57dcc505-98e9-4d41-808f-a1266be1472c?action=share&creator=22952224&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user12s@gmail.com\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}signup",
+					"host": [
+						"{{base_url}}signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user12s@gmail.com\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}login",
+					"host": [
+						"{{base_url}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get NearBy Place",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user12s@gmail.com\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}places?lat=23.7973595&long=90.3567834",
+					"host": [
+						"{{base_url}}places"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "23.7973595"
+						},
+						{
+							"key": "long",
+							"value": "90.3567834"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Please Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user12s@gmail.com\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}place-details?lat=23.7893056&long=90.3567834",
+					"host": [
+						"{{base_url}}place-details"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "23.7893056"
+						},
+						{
+							"key": "long",
+							"value": "90.3567834"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Please Details using place id (Best Option)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user12s@gmail.com\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}place-details-by-place-id?place_id=ChIJj_Xw1efAVTcR_VavEbPI_eI",
+					"host": [
+						"{{base_url}}place-details-by-place-id"
+					],
+					"query": [
+						{
+							"key": "place_id",
+							"value": "ChIJj_Xw1efAVTcR_VavEbPI_eI"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "U8HwsSb0esiDSSmWem6Z0LAZIoHnLSLFWr5LX9ni",
+			"type": "string"
+		}
+	]
+}

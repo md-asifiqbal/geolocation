@@ -25,4 +25,6 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/places', [GeolocationController::class, 'nearbyPlaces']);
+    Route::get('/place-details', [GeolocationController::class, 'placeDetails']);
+    Route::get('/place-details-by-place-id', [GeolocationController::class, 'placeDetailsByPlaceId']);
 });
